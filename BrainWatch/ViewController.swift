@@ -5,20 +5,30 @@
 //  Created by Toshihito Kikuchi on 7/10/16.
 //  Copyright © 2016 jp.co.tokikuch. All rights reserved.
 //
+// http://stackoverflow.com/questions/31735228/how-to-make-a-simple-collection-view-with-swift
+//
 
 import UIKit
 
-class ViewController: UIViewController, TGStreamDelegate {
+class EEGCell: UICollectionViewCell {
+    @IBOutlet weak var labelField: UILabel!
+}
+
+class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     enum State { case Disconnected, Connected, Recording }
     var state = State.Disconnected
     var tgsInstance = TGStream.sharedInstance()
     var eegWriter = EEGWriter(subDirectory: "/eeg")
-    let isOffline = true
+    let isOffline = false
     var lastPoorSignal: Int32 = 200
+    let reuseIdentifier = "cell"
+    var items: [Int32] = [0, 0]
+    var colors = [UIColor.redColor(), UIColor.blueColor()]
 
     @IBOutlet weak var buttonStart: UIButton!
     @IBOutlet weak var textName: UITextField!
     @IBOutlet weak var textScene: UITextField!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     func logInfo(message: String) {
         print(message)
@@ -44,6 +54,12 @@ class ViewController: UIViewController, TGStreamDelegate {
         logInfo(tgsInstance.getVersion())
         updateUI()
         textName.text = UIDevice.currentDevice().name
+        NSTimer.scheduledTimerWithTimeInterval(1,
+                                               target: self,
+                                               selector: #selector(self.onTimer),
+                                               userInfo: nil,
+                                               repeats: true)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,9 +106,11 @@ class ViewController: UIViewController, TGStreamDelegate {
         case Int(MindDataType.CODE_RAW.rawValue):
             break
         case Int(MindDataType.CODE_ATTENTION.rawValue):
-            break
+            //logInfo("att = \(data)")
+            items[0] = data
         case Int(MindDataType.CODE_MEDITATION.rawValue):
-            break
+            //logInfo("med = \(data)")
+            items[1] = data
         default:
             logInfo(String(format: "datatype = %d", datatype))
         }
@@ -100,6 +118,7 @@ class ViewController: UIViewController, TGStreamDelegate {
     
     func onStatesChanged(connectionState: ConnectionStates) {
         var needUpdateUI = false
+        logInfo(String(format: "connectionState = %d", connectionState.rawValue))
         switch (connectionState) {
         case .STATE_ERROR:
             showAlert("Connection error")
@@ -140,6 +159,25 @@ class ViewController: UIViewController, TGStreamDelegate {
             state = .Connected
         }
         updateUI()
+    }
+
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.items.count
+    }
+
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EEGCell
+        cell.labelField.text = String(Int(items[indexPath.item]))
+        cell.backgroundColor = colors[indexPath.item]
+        return cell
+    }
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // logInfo("Cell#\(indexPath.item)) selected")
+    }
+
+    func onTimer() {
+        collectionView.reloadData()
     }
 }
 
