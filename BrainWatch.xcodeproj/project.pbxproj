@@ -14,6 +14,9 @@
 		CE7C924C1D335B4C00F8197F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7C924A1D335B4C00F8197F /* LaunchScreen.storyboard */; };
 		CE7C92571D335B4C00F8197F /* BrainWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C92561D335B4C00F8197F /* BrainWatchTests.swift */; };
 		CE7C92621D335B4C00F8197F /* BrainWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C92611D335B4C00F8197F /* BrainWatchUITests.swift */; };
+		CE7C92711D335B9E00F8197F /* sample_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE7C92701D335B9E00F8197F /* sample_data.txt */; };
+		CE7C92781D335BB000F8197F /* StreamSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C92731D335BB000F8197F /* StreamSDK.a */; };
+		CE7C927B1D335D9700F8197F /* StreamSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C927A1D335D9700F8197F /* StreamSDK.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,14 @@
 		CE7C925D1D335B4C00F8197F /* BrainWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C92611D335B4C00F8197F /* BrainWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainWatchUITests.swift; sourceTree = "<group>"; };
 		CE7C92631D335B4C00F8197F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE7C92701D335B9E00F8197F /* sample_data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_data.txt; sourceTree = "<group>"; };
+		CE7C92731D335BB000F8197F /* StreamSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = StreamSDK.a; sourceTree = "<group>"; };
+		CE7C92741D335BB000F8197F /* TGSEEGPower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSEEGPower.h; sourceTree = "<group>"; };
+		CE7C92751D335BB000F8197F /* TGStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGStream.h; sourceTree = "<group>"; };
+		CE7C92761D335BB000F8197F /* TGStreamDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGStreamDelegate.h; sourceTree = "<group>"; };
+		CE7C92771D335BB000F8197F /* TGStreamEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGStreamEnum.h; sourceTree = "<group>"; };
+		CE7C92791D335D9700F8197F /* BrainWatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrainWatch-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE7C927A1D335D9700F8197F /* StreamSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamSDK.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7C92781D335BB000F8197F /* StreamSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +89,8 @@
 		CE7C92351D335B4B00F8197F = {
 			isa = PBXGroup;
 			children = (
+				CE7C92721D335BB000F8197F /* StreamSDK */,
+				CE7C926F1D335B9E00F8197F /* Bundle */,
 				CE7C92401D335B4C00F8197F /* BrainWatch */,
 				CE7C92551D335B4C00F8197F /* BrainWatchTests */,
 				CE7C92601D335B4C00F8197F /* BrainWatchUITests */,
@@ -103,6 +117,8 @@
 				CE7C92481D335B4C00F8197F /* Assets.xcassets */,
 				CE7C924A1D335B4C00F8197F /* LaunchScreen.storyboard */,
 				CE7C924D1D335B4C00F8197F /* Info.plist */,
+				CE7C927A1D335D9700F8197F /* StreamSDK.m */,
+				CE7C92791D335D9700F8197F /* BrainWatch-Bridging-Header.h */,
 			);
 			path = BrainWatch;
 			sourceTree = "<group>";
@@ -123,6 +139,26 @@
 				CE7C92631D335B4C00F8197F /* Info.plist */,
 			);
 			path = BrainWatchUITests;
+			sourceTree = "<group>";
+		};
+		CE7C926F1D335B9E00F8197F /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C92701D335B9E00F8197F /* sample_data.txt */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
+		CE7C92721D335BB000F8197F /* StreamSDK */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C92731D335BB000F8197F /* StreamSDK.a */,
+				CE7C92741D335BB000F8197F /* TGSEEGPower.h */,
+				CE7C92751D335BB000F8197F /* TGStream.h */,
+				CE7C92761D335BB000F8197F /* TGStreamDelegate.h */,
+				CE7C92771D335BB000F8197F /* TGStreamEnum.h */,
+			);
+			path = StreamSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7C92711D335B9E00F8197F /* sample_data.txt in Resources */,
 				CE7C924C1D335B4C00F8197F /* LaunchScreen.storyboard in Resources */,
 				CE7C92491D335B4C00F8197F /* Assets.xcassets in Resources */,
 				CE7C92471D335B4C00F8197F /* Main.storyboard in Resources */,
@@ -259,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7C927B1D335D9700F8197F /* StreamSDK.m in Sources */,
 				CE7C92441D335B4C00F8197F /* ViewController.swift in Sources */,
 				CE7C92421D335B4C00F8197F /* AppDelegate.swift in Sources */,
 			);
@@ -404,10 +442,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BrainWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StreamSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.tokikuch.BrainWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrainWatch/BrainWatch-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -415,10 +460,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BrainWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StreamSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.tokikuch.BrainWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BrainWatch/BrainWatch-Bridging-Header.h";
 			};
 			name = Release;
 		};
