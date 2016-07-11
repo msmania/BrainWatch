@@ -17,6 +17,7 @@
 		CE7C92711D335B9E00F8197F /* sample_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE7C92701D335B9E00F8197F /* sample_data.txt */; };
 		CE7C92781D335BB000F8197F /* StreamSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C92731D335BB000F8197F /* StreamSDK.a */; };
 		CE7C927B1D335D9700F8197F /* StreamSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C927A1D335D9700F8197F /* StreamSDK.m */; };
+		CEAF12F11D33706000A42C86 /* EEGWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF12F01D33706000A42C86 /* EEGWriter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		CE7C92771D335BB000F8197F /* TGStreamEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGStreamEnum.h; sourceTree = "<group>"; };
 		CE7C92791D335D9700F8197F /* BrainWatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrainWatch-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE7C927A1D335D9700F8197F /* StreamSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamSDK.m; sourceTree = "<group>"; };
+		CEAF12F01D33706000A42C86 /* EEGWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EEGWriter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		CE7C92401D335B4C00F8197F /* BrainWatch */ = {
 			isa = PBXGroup;
 			children = (
+				CEAF12F01D33706000A42C86 /* EEGWriter.swift */,
 				CE7C92411D335B4C00F8197F /* AppDelegate.swift */,
 				CE7C92431D335B4C00F8197F /* ViewController.swift */,
 				CE7C92451D335B4C00F8197F /* Main.storyboard */,
@@ -296,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAF12F11D33706000A42C86 /* EEGWriter.swift in Sources */,
 				CE7C927B1D335D9700F8197F /* StreamSDK.m in Sources */,
 				CE7C92441D335B4C00F8197F /* ViewController.swift in Sources */,
 				CE7C92421D335B4C00F8197F /* AppDelegate.swift in Sources */,
@@ -538,6 +542,7 @@
 				CE7C92681D335B4C00F8197F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE7C92691D335B4C00F8197F /* Build configuration list for PBXNativeTarget "BrainWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +551,7 @@
 				CE7C926B1D335B4C00F8197F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE7C926C1D335B4C00F8197F /* Build configuration list for PBXNativeTarget "BrainWatchUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +560,7 @@
 				CE7C926E1D335B4C00F8197F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

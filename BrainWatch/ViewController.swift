@@ -12,7 +12,9 @@ class ViewController: UIViewController, TGStreamDelegate {
     enum State { case Disconnected, Connected, Recording }
     var state = State.Disconnected
     var tgsInstance = TGStream.sharedInstance()
+    var eegWriter = EEGWriter(subDirectory: "/eeg")
     let isOffline = false
+    var lastPoorSignal: Int32 = 200
 
     @IBOutlet weak var buttonStart: UIButton!
     
@@ -38,6 +40,7 @@ class ViewController: UIViewController, TGStreamDelegate {
         
         tgsInstance.delegate = self
         logInfo(tgsInstance.getVersion())
+        updateUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,8 +72,26 @@ class ViewController: UIViewController, TGStreamDelegate {
     }
     
     func onDataReceived(datatype: Int, data: Int32, obj: NSObject!, deviceType: DEVICE_TYPE) {
-        if let eeg = obj as? TGSEEGPower {
-            logInfo(String(format: "lowAlpha = %d", eeg.lowAlpha))
+        switch (datatype) {
+        case Int(MindDataType.CODE_POOR_SIGNAL.rawValue):
+            if data != lastPoorSignal {
+                logInfo(String(format: "signal: %d -> %d", lastPoorSignal, data));
+                lastPoorSignal = data
+            }
+        case Int(MindDataType.CODE_EEGPOWER.rawValue):
+            if let eeg = obj as? TGSEEGPower {
+                if state == .Recording {
+                    eegWriter?.write(lastPoorSignal, eeg: eeg)
+                }
+            }
+        case Int(MindDataType.CODE_RAW.rawValue):
+            break
+        case Int(MindDataType.CODE_ATTENTION.rawValue):
+            break
+        case Int(MindDataType.CODE_MEDITATION.rawValue):
+            break
+        default:
+            logInfo(String(format: "datatype = %d", datatype))
         }
     }
     
@@ -106,17 +127,14 @@ class ViewController: UIViewController, TGStreamDelegate {
                 tgsInstance.initConnectWithAccessorySession()
             }
         case .Connected:
+            eegWriter?.start("John", activity: "Driving")
             tgsInstance.setRecordStreamFilePath()
             tgsInstance.startRecordRawData()
             state = .Recording
         case .Recording:
             tgsInstance.stopRecordRawData()
-            if isOffline {
-                state = .Disconnected
-            }
-            else {
-                state = .Connected
-            }
+            eegWriter?.stop()
+            state = .Connected
         }
         updateUI()
     }
