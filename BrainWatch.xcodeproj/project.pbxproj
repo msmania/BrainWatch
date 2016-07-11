@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE7C92421D335B4C00F8197F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C92411D335B4C00F8197F /* AppDelegate.swift */; };
+		CE7C92441D335B4C00F8197F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C92431D335B4C00F8197F /* ViewController.swift */; };
+		CE7C92471D335B4C00F8197F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7C92451D335B4C00F8197F /* Main.storyboard */; };
+		CE7C92491D335B4C00F8197F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7C92481D335B4C00F8197F /* Assets.xcassets */; };
+		CE7C924C1D335B4C00F8197F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7C924A1D335B4C00F8197F /* LaunchScreen.storyboard */; };
+		CE7C92571D335B4C00F8197F /* BrainWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C92561D335B4C00F8197F /* BrainWatchTests.swift */; };
+		CE7C92621D335B4C00F8197F /* BrainWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C92611D335B4C00F8197F /* BrainWatchUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE7C92531D335B4C00F8197F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7C92361D335B4B00F8197F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE7C923D1D335B4C00F8197F;
+			remoteInfo = BrainWatch;
+		};
+		CE7C925E1D335B4C00F8197F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7C92361D335B4B00F8197F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE7C923D1D335B4C00F8197F;
+			remoteInfo = BrainWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CE7C923E1D335B4C00F8197F /* BrainWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7C92411D335B4C00F8197F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE7C92431D335B4C00F8197F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE7C92461D335B4C00F8197F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE7C92481D335B4C00F8197F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE7C924B1D335B4C00F8197F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE7C924D1D335B4C00F8197F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE7C92521D335B4C00F8197F /* BrainWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7C92561D335B4C00F8197F /* BrainWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainWatchTests.swift; sourceTree = "<group>"; };
+		CE7C92581D335B4C00F8197F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE7C925D1D335B4C00F8197F /* BrainWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7C92611D335B4C00F8197F /* BrainWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainWatchUITests.swift; sourceTree = "<group>"; };
+		CE7C92631D335B4C00F8197F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE7C923B1D335B4C00F8197F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7C924F1D335B4C00F8197F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7C925A1D335B4C00F8197F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE7C92351D335B4B00F8197F = {
+			isa = PBXGroup;
+			children = (
+				CE7C92401D335B4C00F8197F /* BrainWatch */,
+				CE7C92551D335B4C00F8197F /* BrainWatchTests */,
+				CE7C92601D335B4C00F8197F /* BrainWatchUITests */,
+				CE7C923F1D335B4C00F8197F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE7C923F1D335B4C00F8197F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C923E1D335B4C00F8197F /* BrainWatch.app */,
+				CE7C92521D335B4C00F8197F /* BrainWatchTests.xctest */,
+				CE7C925D1D335B4C00F8197F /* BrainWatchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE7C92401D335B4C00F8197F /* BrainWatch */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C92411D335B4C00F8197F /* AppDelegate.swift */,
+				CE7C92431D335B4C00F8197F /* ViewController.swift */,
+				CE7C92451D335B4C00F8197F /* Main.storyboard */,
+				CE7C92481D335B4C00F8197F /* Assets.xcassets */,
+				CE7C924A1D335B4C00F8197F /* LaunchScreen.storyboard */,
+				CE7C924D1D335B4C00F8197F /* Info.plist */,
+			);
+			path = BrainWatch;
+			sourceTree = "<group>";
+		};
+		CE7C92551D335B4C00F8197F /* BrainWatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C92561D335B4C00F8197F /* BrainWatchTests.swift */,
+				CE7C92581D335B4C00F8197F /* Info.plist */,
+			);
+			path = BrainWatchTests;
+			sourceTree = "<group>";
+		};
+		CE7C92601D335B4C00F8197F /* BrainWatchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C92611D335B4C00F8197F /* BrainWatchUITests.swift */,
+				CE7C92631D335B4C00F8197F /* Info.plist */,
+			);
+			path = BrainWatchUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE7C923D1D335B4C00F8197F /* BrainWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE7C92661D335B4C00F8197F /* Build configuration list for PBXNativeTarget "BrainWatch" */;
+			buildPhases = (
+				CE7C923A1D335B4C00F8197F /* Sources */,
+				CE7C923B1D335B4C00F8197F /* Frameworks */,
+				CE7C923C1D335B4C00F8197F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrainWatch;
+			productName = BrainWatch;
+			productReference = CE7C923E1D335B4C00F8197F /* BrainWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE7C92511D335B4C00F8197F /* BrainWatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE7C92691D335B4C00F8197F /* Build configuration list for PBXNativeTarget "BrainWatchTests" */;
+			buildPhases = (
+				CE7C924E1D335B4C00F8197F /* Sources */,
+				CE7C924F1D335B4C00F8197F /* Frameworks */,
+				CE7C92501D335B4C00F8197F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE7C92541D335B4C00F8197F /* PBXTargetDependency */,
+			);
+			name = BrainWatchTests;
+			productName = BrainWatchTests;
+			productReference = CE7C92521D335B4C00F8197F /* BrainWatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE7C925C1D335B4C00F8197F /* BrainWatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE7C926C1D335B4C00F8197F /* Build configuration list for PBXNativeTarget "BrainWatchUITests" */;
+			buildPhases = (
+				CE7C92591D335B4C00F8197F /* Sources */,
+				CE7C925A1D335B4C00F8197F /* Frameworks */,
+				CE7C925B1D335B4C00F8197F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE7C925F1D335B4C00F8197F /* PBXTargetDependency */,
+			);
+			name = BrainWatchUITests;
+			productName = BrainWatchUITests;
+			productReference = CE7C925D1D335B4C00F8197F /* BrainWatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE7C92361D335B4B00F8197F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = jp.co.tokikuch;
+				TargetAttributes = {
+					CE7C923D1D335B4C00F8197F = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LXRPLL3UYR;
+					};
+					CE7C92511D335B4C00F8197F = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LXRPLL3UYR;
+						TestTargetID = CE7C923D1D335B4C00F8197F;
+					};
+					CE7C925C1D335B4C00F8197F = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LXRPLL3UYR;
+						TestTargetID = CE7C923D1D335B4C00F8197F;
+					};
+				};
+			};
+			buildConfigurationList = CE7C92391D335B4B00F8197F /* Build configuration list for PBXProject "BrainWatch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE7C92351D335B4B00F8197F;
+			productRefGroup = CE7C923F1D335B4C00F8197F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE7C923D1D335B4C00F8197F /* BrainWatch */,
+				CE7C92511D335B4C00F8197F /* BrainWatchTests */,
+				CE7C925C1D335B4C00F8197F /* BrainWatchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE7C923C1D335B4C00F8197F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7C924C1D335B4C00F8197F /* LaunchScreen.storyboard in Resources */,
+				CE7C92491D335B4C00F8197F /* Assets.xcassets in Resources */,
+				CE7C92471D335B4C00F8197F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7C92501D335B4C00F8197F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7C925B1D335B4C00F8197F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE7C923A1D335B4C00F8197F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7C92441D335B4C00F8197F /* ViewController.swift in Sources */,
+				CE7C92421D335B4C00F8197F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7C924E1D335B4C00F8197F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7C92571D335B4C00F8197F /* BrainWatchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7C92591D335B4C00F8197F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7C92621D335B4C00F8197F /* BrainWatchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE7C92541D335B4C00F8197F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE7C923D1D335B4C00F8197F /* BrainWatch */;
+			targetProxy = CE7C92531D335B4C00F8197F /* PBXContainerItemProxy */;
+		};
+		CE7C925F1D335B4C00F8197F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE7C923D1D335B4C00F8197F /* BrainWatch */;
+			targetProxy = CE7C925E1D335B4C00F8197F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE7C92451D335B4C00F8197F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7C92461D335B4C00F8197F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE7C924A1D335B4C00F8197F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7C924B1D335B4C00F8197F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE7C92641D335B4C00F8197F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE7C92651D335B4C00F8197F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE7C92671D335B4C00F8197F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BrainWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.tokikuch.BrainWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CE7C92681D335B4C00F8197F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BrainWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.tokikuch.BrainWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CE7C926A1D335B4C00F8197F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BrainWatchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.tokikuch.BrainWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrainWatch.app/BrainWatch";
+			};
+			name = Debug;
+		};
+		CE7C926B1D335B4C00F8197F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BrainWatchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.tokikuch.BrainWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrainWatch.app/BrainWatch";
+			};
+			name = Release;
+		};
+		CE7C926D1D335B4C00F8197F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BrainWatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.tokikuch.BrainWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BrainWatch;
+			};
+			name = Debug;
+		};
+		CE7C926E1D335B4C00F8197F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BrainWatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.tokikuch.BrainWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BrainWatch;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE7C92391D335B4B00F8197F /* Build configuration list for PBXProject "BrainWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7C92641D335B4C00F8197F /* Debug */,
+				CE7C92651D335B4C00F8197F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE7C92661D335B4C00F8197F /* Build configuration list for PBXNativeTarget "BrainWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7C92671D335B4C00F8197F /* Debug */,
+				CE7C92681D335B4C00F8197F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CE7C92691D335B4C00F8197F /* Build configuration list for PBXNativeTarget "BrainWatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7C926A1D335B4C00F8197F /* Debug */,
+				CE7C926B1D335B4C00F8197F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CE7C926C1D335B4C00F8197F /* Build configuration list for PBXNativeTarget "BrainWatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7C926D1D335B4C00F8197F /* Debug */,
+				CE7C926E1D335B4C00F8197F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE7C92361D335B4B00F8197F /* Project object */;
+}
