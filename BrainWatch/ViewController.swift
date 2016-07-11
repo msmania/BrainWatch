@@ -13,10 +13,12 @@ class ViewController: UIViewController, TGStreamDelegate {
     var state = State.Disconnected
     var tgsInstance = TGStream.sharedInstance()
     var eegWriter = EEGWriter(subDirectory: "/eeg")
-    let isOffline = false
+    let isOffline = true
     var lastPoorSignal: Int32 = 200
 
     @IBOutlet weak var buttonStart: UIButton!
+    @IBOutlet weak var textName: UITextField!
+    @IBOutlet weak var textScene: UITextField!
     
     func logInfo(message: String) {
         print(message)
@@ -41,6 +43,7 @@ class ViewController: UIViewController, TGStreamDelegate {
         tgsInstance.delegate = self
         logInfo(tgsInstance.getVersion())
         updateUI()
+        textName.text = UIDevice.currentDevice().name
     }
 
     override func didReceiveMemoryWarning() {
@@ -127,7 +130,7 @@ class ViewController: UIViewController, TGStreamDelegate {
                 tgsInstance.initConnectWithAccessorySession()
             }
         case .Connected:
-            eegWriter?.start("John", activity: "Driving")
+            eegWriter?.start(textName.text ?? "John", activity: textScene.text ?? "Driving")
             tgsInstance.setRecordStreamFilePath()
             tgsInstance.startRecordRawData()
             state = .Recording
