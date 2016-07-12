@@ -57,10 +57,8 @@ class EEGWriter {
     
     func start(user: String, activity: String, eeg: EEGSnapshot) {
         fileName = generateFileName()
-        writeInternal("# timestamp," + eeg.getCsvHeader() + "\n")
-        writeInternal(String(format: "; User = %s\n; Activity = %s\n",
-            (user as NSString).UTF8String,
-            (activity as NSString).UTF8String))
+        writeInternal("# timestamp,\(eeg.getCsvHeader())\n")
+        writeInternal("; User = \(user)\n; Activity = \(activity)\n")
     }
     
     func stop() {
