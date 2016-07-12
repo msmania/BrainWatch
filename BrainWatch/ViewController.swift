@@ -10,20 +10,14 @@
 
 import UIKit
 
-class EEGCell: UICollectionViewCell {
-    @IBOutlet weak var labelField: UILabel!
-}
-
 class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     enum State { case Disconnected, Connected, Recording }
     var state = State.Disconnected
     var tgsInstance = TGStream.sharedInstance()
     var eegWriter = EEGWriter(subDirectory: "/eeg")
     let isOffline = false
-    var lastPoorSignal: Int32 = 200
     let reuseIdentifier = "cell"
-    var items: [Int32] = [0, 0]
-    var colors = [UIColor.redColor(), UIColor.blueColor()]
+    var eegSnapshot = EEGSnapshot()
 
     @IBOutlet weak var buttonStart: UIButton!
     @IBOutlet weak var textName: UITextField!
@@ -93,24 +87,25 @@ class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSo
     func onDataReceived(datatype: Int, data: Int32, obj: NSObject!, deviceType: DEVICE_TYPE) {
         switch (datatype) {
         case Int(MindDataType.CODE_POOR_SIGNAL.rawValue):
-            if data != lastPoorSignal {
-                logInfo(String(format: "signal: %d -> %d", lastPoorSignal, data));
-                lastPoorSignal = data
-            }
+            eegSnapshot.setSigleValue(.signal, value: data)
         case Int(MindDataType.CODE_EEGPOWER.rawValue):
             if let eeg = obj as? TGSEEGPower {
-                if state == .Recording {
-                    eegWriter?.write(lastPoorSignal, eeg: eeg)
-                }
+                //logInfo("delta = \(eeg.delta)")
+                eegSnapshot.setEEGValues(eeg)
             }
         case Int(MindDataType.CODE_RAW.rawValue):
             break
         case Int(MindDataType.CODE_ATTENTION.rawValue):
             //logInfo("att = \(data)")
-            items[0] = data
+            eegSnapshot.setSigleValue(.att, value: data)
         case Int(MindDataType.CODE_MEDITATION.rawValue):
             //logInfo("med = \(data)")
-            items[1] = data
+            eegSnapshot.setSigleValue(.med, value: data)
+            // SDK sends events in the order of CODE_EEGPOWER, CODE_ATTENTION, and CODE_MEDITATION
+            // in a window of one second.  Thus, we write an event at CODE_MEDITATION.
+            if state == .Recording {
+                eegWriter?.write(eegSnapshot)
+            }
         default:
             logInfo(String(format: "datatype = %d", datatype))
         }
@@ -149,7 +144,7 @@ class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSo
                 tgsInstance.initConnectWithAccessorySession()
             }
         case .Connected:
-            eegWriter?.start(textName.text ?? "John", activity: textScene.text ?? "Driving")
+            eegWriter?.start(textName.text ?? "John", activity: textScene.text ?? "Driving", eeg: eegSnapshot)
             tgsInstance.setRecordStreamFilePath()
             tgsInstance.startRecordRawData()
             state = .Recording
@@ -162,13 +157,12 @@ class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSo
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        return self.eegSnapshot.data.count
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! EEGCell
-        cell.labelField.text = String(Int(items[indexPath.item]))
-        cell.backgroundColor = colors[indexPath.item]
+        cell.updateUI(eegSnapshot.data[indexPath.item])
         return cell
     }
 

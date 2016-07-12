@@ -55,9 +55,9 @@ class EEGWriter {
         return formatter.stringFromDate(NSDate())
     }
     
-    func start(user: String, activity: String) {
+    func start(user: String, activity: String, eeg: EEGSnapshot) {
         fileName = generateFileName()
-        writeInternal("# timestamp,poorSignal,lowAlpha,highAlpha,lowBeta,highBeta,lowGamma,middleGamma,delta,theta\n")
+        writeInternal("# timestamp," + eeg.getCsvHeader() + "\n")
         writeInternal(String(format: "; User = %s\n; Activity = %s\n",
             (user as NSString).UTF8String,
             (activity as NSString).UTF8String))
@@ -67,20 +67,10 @@ class EEGWriter {
         fileName = nil
     }
     
-    func write(poorSignal: Int32, eeg: TGSEEGPower) {
+    func write(eeg: EEGSnapshot) {
         let now = NSDate()
         let ts = now.timeIntervalSince1970
-        writeInternal(String(format: "%s,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",
-            (String(UInt64(ts * 1000)) as NSString).UTF8String,
-            poorSignal,
-            eeg.lowAlpha,
-            eeg.highAlpha,
-            eeg.lowBeta,
-            eeg.highBeta,
-            eeg.lowGamma,
-            eeg.middleGamma,
-            eeg.delta,
-            eeg.theta))
+        writeInternal(String(UInt64(ts * 1000)) + "," + eeg.getCsvLine() + "\n")
     }
     
     private func writeInternal(line: String) {

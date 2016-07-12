@@ -17,6 +17,7 @@
 		CE7C92711D335B9E00F8197F /* sample_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE7C92701D335B9E00F8197F /* sample_data.txt */; };
 		CE7C92781D335BB000F8197F /* StreamSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C92731D335BB000F8197F /* StreamSDK.a */; };
 		CE7C927B1D335D9700F8197F /* StreamSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C927A1D335D9700F8197F /* StreamSDK.m */; };
+		CE8050601D34858400EDD68E /* EEGData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80505F1D34858400EDD68E /* EEGData.swift */; };
 		CEAF12F11D33706000A42C86 /* EEGWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF12F01D33706000A42C86 /* EEGWriter.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		CE7C92771D335BB000F8197F /* TGStreamEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGStreamEnum.h; sourceTree = "<group>"; };
 		CE7C92791D335D9700F8197F /* BrainWatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrainWatch-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE7C927A1D335D9700F8197F /* StreamSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamSDK.m; sourceTree = "<group>"; };
+		CE80505F1D34858400EDD68E /* EEGData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EEGData.swift; sourceTree = "<group>"; };
 		CEAF12F01D33706000A42C86 /* EEGWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EEGWriter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				CE7C924D1D335B4C00F8197F /* Info.plist */,
 				CE7C927A1D335D9700F8197F /* StreamSDK.m */,
 				CE7C92791D335D9700F8197F /* BrainWatch-Bridging-Header.h */,
+				CE80505F1D34858400EDD68E /* EEGData.swift */,
 			);
 			path = BrainWatch;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				CEAF12F11D33706000A42C86 /* EEGWriter.swift in Sources */,
 				CE7C927B1D335D9700F8197F /* StreamSDK.m in Sources */,
+				CE8050601D34858400EDD68E /* EEGData.swift in Sources */,
 				CE7C92441D335B4C00F8197F /* ViewController.swift in Sources */,
 				CE7C92421D335B4C00F8197F /* AppDelegate.swift in Sources */,
 			);
