@@ -159,6 +159,15 @@ class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSo
         updateUI()
     }
 
+    @IBAction func onButtonReset(sender: UIButton) {
+        tgsInstance.stopRecordRawData()
+        eegWriter?.stop()
+        tgsInstance.tearDownAccessorySession()
+        state = .Disconnected
+        updateUI()
+    }
+
+    @IBOutlet weak var onButtonReset: UIButton!
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.eegSnapshot.data.count
     }
