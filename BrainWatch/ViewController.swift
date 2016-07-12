@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate {
     enum State { case Disconnected, Connected, Recording }
     var state = State.Disconnected
     var tgsInstance = TGStream.sharedInstance()
@@ -42,9 +42,11 @@ class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         tgsInstance.delegate = self
+        textName.delegate = self
+        textScene.delegate = self
+
         logInfo(tgsInstance.getVersion())
         updateUI()
         textName.text = UIDevice.currentDevice().name
@@ -135,6 +137,7 @@ class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSo
     }
     
     @IBAction func onButtonStart(sender: UIButton) {
+        hideKeyboard()
         switch (state) {
         case .Disconnected:
             if isOffline {
@@ -167,11 +170,21 @@ class ViewController: UIViewController, TGStreamDelegate, UICollectionViewDataSo
     }
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        // logInfo("Cell#\(indexPath.item)) selected")
+        hideKeyboard()
     }
 
     func onTimer() {
         collectionView.reloadData()
     }
-}
 
+    private func hideKeyboard() {
+        textName.resignFirstResponder()
+        textScene.resignFirstResponder()
+    }
+
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        hideKeyboard()
+        return true
+    }
+}
